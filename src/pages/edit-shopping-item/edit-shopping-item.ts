@@ -32,7 +32,8 @@ export class EditShoppingItemPage {
     // Subscribe to the Object and assign the result to this.shoppingItem
     this.shoppingItemSubscription =
       this.shoppingItemRef$.subscribe(
-      shoppingItem => this.shoppingItem = shoppingItem);
+        shoppingItem => this.shoppingItem = shoppingItem
+      );
 
   }
 
