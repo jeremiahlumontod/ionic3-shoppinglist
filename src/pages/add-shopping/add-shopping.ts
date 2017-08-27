@@ -15,7 +15,8 @@ export class AddShoppingPage {
   shoppingItem = {} as ShoppingItem;
   shoppingItemRef$: FirebaseListObservable<ShoppingItem[]>
   
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private database: AngularFireDatabase) {
+    this.shoppingItemRef$ = this.database.list('shopping-list');
   }
 
   ionViewDidLoad() {
@@ -28,16 +29,16 @@ export class AddShoppingPage {
       Create a new anonymous object and convert itemNumber to a number.
       Push this to our Firebase database under the 'shopping-list' node.
     */
-    // this.shoppingItemRef$.push({
-    //   itemName: this.shoppingItem.itemName,
-    //   itemNumber: Number(this.shoppingItem.itemNumber)
-    // });
+    this.shoppingItemRef$.push({
+      itemName: this.shoppingItem.itemName,
+      itemNumber: Number(this.shoppingItem.itemNumber)
+    });
 
     // Reset our ShoppingItem
-    // this.shoppingItem = {} as ShoppingItem;
+    this.shoppingItem = {} as ShoppingItem;
 
     // Navigate the user back to the ShoppingListPage
-    // this.navCtrl.pop();
+    this.navCtrl.pop();
   }
   
 }

@@ -9,7 +9,7 @@ import { ShoppingListPage } from '../pages/shopping-list/shopping-list';
 import {  AddShoppingPage } from '../pages/add-shopping/add-shopping';
 
 import { AngularFireModule } from 'angularfire2';
-
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { FIREBASE_CREDENTIALS } from './firebase.credentials';
 
 @NgModule({
@@ -20,6 +20,7 @@ import { FIREBASE_CREDENTIALS } from './firebase.credentials';
   ],
   imports: [
     BrowserModule,
+    AngularFireDatabaseModule,
     AngularFireModule.initializeApp(FIREBASE_CREDENTIALS),
     IonicModule.forRoot(MyApp)
   ],
