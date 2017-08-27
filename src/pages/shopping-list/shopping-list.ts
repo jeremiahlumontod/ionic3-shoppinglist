@@ -52,8 +52,8 @@ export class ShoppingListPage {
           text: 'Edit',
           handler: () => {
             // Send the user to the EditShoppingItemPage and pass the key as a parameter
-            this.navCtrl.push(EditShoppingItemPage,
-              { shoppingItemId: shoppingItem.$key });
+            //this.navCtrl.push(EditShoppingItemPage,
+            //  { shoppingItemId: shoppingItem.$key });
             
             /*
              Navigation stack:
